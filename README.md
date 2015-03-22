@@ -1,6 +1,10 @@
 # ChessGDX
 A 3D chess game taking advantage of UCI-Protocol compliant chess engines. A small project I made while learning LibGDX, it functions but serves no real purpose.
 
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=u0ezavUIsTU
+" target="_blank"><img src="http://img.youtube.com/vi/u0ezavUIsTU/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
 #Credits
 ###Technology  
 The amazing **LibGDX** http://libgdx.badlogicgames.com/  
