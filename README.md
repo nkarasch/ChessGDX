@@ -1,5 +1,5 @@
 # ChessGDX
-A 3D chess game taking advantage of UCI-Protocol compliant chess engines. A small project I made while learning LibGDX, it functions but serves no real purpose.
+ChessGDX is a 3D chess game built on LibGDX that takes advantage of UCI-Protocol compliant chess engines. It is a functional, but narrowly scoped project I made while learning LibGDX.
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=u0ezavUIsTU
 " target="_blank"><img src="http://img.youtube.com/vi/u0ezavUIsTU/0.jpg" 
