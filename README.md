@@ -7,7 +7,7 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 #Credits
 ###Technology  
-The amazing **LibGDX** http://libgdx.badlogicgames.com/  
+The amazing LibGDX http://libgdx.badlogicgames.com/  
 A modified version of Xoppa's shader from https://gist.github.com/xoppa/9766698  
 Chesspresso(TM) http://www.chesspresso.org/
 
