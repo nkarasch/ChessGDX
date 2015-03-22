@@ -1,0 +1,8 @@
+chesspresso
+chesspresso.engines
+chesspresso.game
+chesspresso.game.view
+chesspresso.move
+chesspresso.pgn
+chesspresso.position
+chesspresso.position.view

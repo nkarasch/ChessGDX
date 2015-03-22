@@ -1,0 +1,27 @@
+CHESSPRESSO INSTALLATION
+
+Download
+--------------------------------------------------------------------------------
+
+ Chesspresso is available at http://sourceforge.net/projects/chesspresso
+
+
+Install
+--------------------------------------------------------------------------------
+
+ 1) just unzip the archive (most probably you have done that already)
+ 2) done
+
+
+
+Run the tests:
+--------------------------------------------------------------------------------
+
+ 1) Install Junit (newest version 3.8.1 available at www.junit.org)
+ 2) set JUNIT_HOME to the junit install directory (e.g. c:/junit-3.8.1)
+ 3) run the tests with
+    java -classpath chesspresso-lib.jar;chesspresso-lib-test.jar;%JUNIT_HOME%\junit.jar chesspresso.AllTests
+
+
+--------------------------------------------------------------------------------
+(c) Bernhard Seybold 2002
