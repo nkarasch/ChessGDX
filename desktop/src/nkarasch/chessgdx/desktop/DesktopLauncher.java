@@ -58,7 +58,7 @@ public class DesktopLauncher {
 		cmdLine.add(mainClass.getName());
 
 		cmdLine.addAll(Arrays.asList(parameters));
-		System.out.println(cmdLine);
+		
 		try {
 			Runtime.getRuntime().exec(cmdLine.toArray(new String[cmdLine.size()]));
 		} catch (Exception e) {
