@@ -22,19 +22,19 @@ import com.badlogic.gdx.utils.Array;
 
 public class PerspectiveRenderer {
 
-	private ModelBatch mShadowBatch;
-	private ModelBatch mCubeMapBatch;
-	private ModelBatch mBackgroundBatch;
-	private Environment mEnvironment;
-	private Environment mBackgroundEnvironment;
-	private Array<ABaseObject> mDrawables;
+	private final ModelBatch mShadowBatch;
+	private final ModelBatch mCubeMapBatch;
+	private final ModelBatch mBackgroundBatch;
+	private final Environment mEnvironment;
+	private final Environment mBackgroundEnvironment;
+	private final Array<ABaseObject> mDrawables;
 	private DirectionalShadowLight mShadowLight;
 	private StaticObject mBackground;
-	private BoardController mBoardController;
-	private ChessPieceGraveyard mGraveyard;
-	private Vector3 mLightDirection;
+	private final BoardController mBoardController;
+	private final ChessPieceGraveyard mGraveyard;
+	private final Vector3 mLightDirection;
 
-	private Camera mCamera;
+	private final Camera mCamera;
 
 	/**
 	 * Renderer for all visible 3D components.
@@ -66,9 +66,7 @@ public class PerspectiveRenderer {
 	}
 
 	/**
-	 * Configures the lighting and attributes for the environments
-	 * 
-	 * @param assetHandler
+	 * Configures the lighting and attributes for the environments	 *
 	 */
 	private void configureEnvironments() {
 		mEnvironment.set(new CubemapAttribute(CubemapAttribute.EnvironmentMap, AssetHandler.getInstance().getCubeMap()),
@@ -84,8 +82,7 @@ public class PerspectiveRenderer {
 	/**
 	 * Creates all 3D objects and adds them to the drawable list to be used in
 	 * rendering.
-	 * 
-	 * @param assetHandler
+	 *
 	 * @param piecePlacement
 	 *            array of 64 shorts defining the contents of all 64 board
 	 *            locations

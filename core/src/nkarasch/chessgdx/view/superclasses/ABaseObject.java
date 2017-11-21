@@ -16,7 +16,7 @@ public abstract class ABaseObject {
 	 * @param modelInstance
 	 *            rendered model instance
 	 */
-	public ABaseObject(ModelInstance modelInstance) {
+	protected ABaseObject(ModelInstance modelInstance) {
 		this.mModelInstance = modelInstance;
 	}
 
@@ -30,7 +30,7 @@ public abstract class ABaseObject {
 	 * @param attribute
 	 *            attribute to apply to model instance
 	 */
-	public void setAttributes(Attribute attribute) {
+	protected void setAttributes(Attribute attribute) {
 		mModelInstance.materials.get(0).set(attribute);
 	}
 
@@ -48,7 +48,7 @@ public abstract class ABaseObject {
 	 * @param degrees
 	 *            degrees to rotate
 	 */
-	public void rotate(Vector3 direction, float degrees) {
+	protected void rotate(Vector3 direction, float degrees) {
 		mModelInstance.transform.rotate(direction.x, direction.y, direction.z, degrees);
 	}
 
@@ -57,7 +57,7 @@ public abstract class ABaseObject {
 	 * @param y
 	 * @param z
 	 */
-	public void setTranslation(float x, float y, float z) {
+	protected void setTranslation(float x, float y, float z) {
 		mModelInstance.transform.setTranslation(x, y, z);
 	}
 
@@ -66,7 +66,7 @@ public abstract class ABaseObject {
 	 *            absolute position to move to, not the amount to move from the
 	 *            current position
 	 */
-	public void setTranslation(Vector3 position) {
+	protected void setTranslation(Vector3 position) {
 		mModelInstance.transform.setTranslation(position.x, position.y, position.z);
 	}
 

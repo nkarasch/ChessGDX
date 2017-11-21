@@ -7,8 +7,6 @@ public class ChessPieceMove {
 	private short mPromotion;
 	private boolean mWhite;
 	private boolean mCapturing;
-	private char mPiece;
-	private char mCapturingPiece;
 
 	/**
 	 * Stores all data needed for a single chess pieces movement; where it's
@@ -82,11 +80,10 @@ public class ChessPieceMove {
 	}
 
 	/**
-	 * @param isCapturing
-	 *            is this a capturing move
+	 * sets it as a capturing move
 	 */
-	void setCapturing(boolean isCapturing) {
-		this.mCapturing = isCapturing;
+	void setCapturing() {
+		this.mCapturing = true;
 	}
 
 	public String toString() {
@@ -94,9 +91,9 @@ public class ChessPieceMove {
 		String to = (char) ((this.mTo % 8) + 97) + "" + ((this.mTo / 8) + 1);
 
 		if (mCapturing) {
-			return Character.toUpperCase(mPiece) + from + 'x' + Character.toUpperCase(mCapturingPiece) + to;
+			return from + 'x' + to;
 		} else {
-			return Character.toUpperCase(mPiece) + from + '-' + to;
+			return from + '-' + to;
 		}
 	}
 }

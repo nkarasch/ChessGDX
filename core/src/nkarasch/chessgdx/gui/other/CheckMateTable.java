@@ -10,7 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 
 public class CheckMateTable extends Table {
 
-	private Label mCheckmate;
+	private final Label mCheckmate;
 
 	/**
 	 * A label stored in a table that updates the user to whether the board is

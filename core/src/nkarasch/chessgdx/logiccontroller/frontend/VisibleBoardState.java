@@ -9,7 +9,7 @@ import com.badlogic.gdx.utils.ObjectMap;
 
 class VisibleBoardState {
 
-	private ObjectMap<Integer, GridLocation> mGridPairs = new ObjectMap<Integer, GridLocation>();
+	private final ObjectMap<Integer, GridLocation> mGridPairs = new ObjectMap<Integer, GridLocation>();
 	private GridLocation mUserFrom, mUserTo, mPromotionFrom, mPromotionTo;
 
 	/**
@@ -40,10 +40,8 @@ class VisibleBoardState {
 		GridLocation primaryFrom = mGridPairs.get(move.getPrimary().getFrom());
 		GridLocation primaryTo = mGridPairs.get(move.getPrimary().getTo());
 
-		float secondPieceDelay = 0.0f;
-
 		// primary piece always moves
-		secondPieceDelay = primaryFrom.chessPiece.boardMove(move.getPrimary().getTo(), 0);
+		float secondPieceDelay = primaryFrom.chessPiece.boardMove(move.getPrimary().getTo(), 0);
 
 		if (move.getMoveType() != MoveType.STANDARD_NON_CAPTURE) {
 			GridLocation secondaryFrom = mGridPairs.get(move.getSecondary().getFrom());
@@ -157,11 +155,11 @@ class VisibleBoardState {
 		return mGridPairs;
 	}
 
-	public class GridLocation {
+	protected class GridLocation {
 		ChessPiece chessPiece;
-		private ChessPiece startingPiece;
+		private final ChessPiece startingPiece;
 		final GridSpaceHighlighter gridSpace;
-		int indexLocation;
+		final int indexLocation;
 
 		/**
 		 * Represents the relationship between the visible chess piece models,

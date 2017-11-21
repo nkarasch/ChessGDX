@@ -9,8 +9,8 @@ public class ChessPieceMovePair {
 	}
 
 	private MoveType mMoveType;
-	private ChessPieceMove mPrimary;
-	private ChessPieceMove mSecondary;
+	private final ChessPieceMove mPrimary;
+	private final ChessPieceMove mSecondary;
 
 	/**
 	 * Converts a Chesspresso short move into all of the data needed for moving
@@ -50,7 +50,7 @@ public class ChessPieceMovePair {
 			}
 			mSecondary.setTo(-2); // all capturing moves have a dead second
 									// piece
-			mPrimary.setCapturing(true);
+			mPrimary.setCapturing();
 		} else {
 			mMoveType = MoveType.STANDARD_NON_CAPTURE;
 			if (Move.isCastle(move)) {

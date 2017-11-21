@@ -37,7 +37,7 @@ public class GameCore implements ApplicationListener {
 	public void create() {
 		GraphicsSettings.setGraphics();
 		mCameraController = new Camera();
-		mOverlayRenderer = new OverlayRenderer(mCameraController, this);
+		mOverlayRenderer = new OverlayRenderer(this);
 		mLogicController = new ChessLogicController(mOverlayRenderer);
 		mBoardController = new BoardController(mCameraController, mLogicController, mOverlayRenderer);
 		mPerspectiveRenderer = new PerspectiveRenderer(mCameraController, mBoardController, mLogicController.getPlacement());

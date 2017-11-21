@@ -12,7 +12,7 @@ import com.badlogic.gdx.utils.Array;
 
 class ObjectPicker {
 
-	private Array<GridLocation> mIntersectedBoxList = new Array<GridLocation>();;
+	private final Array<GridLocation> mIntersectedBoxList = new Array<GridLocation>();
 
 	/**
 	 * Sorts the grid spaces in ascending order based on their distance from the
@@ -46,14 +46,12 @@ class ObjectPicker {
 		// check for intersections between the click ray and grid location
 		// bounding box, because the list is sorted the first one detected is
 		// the one the user wants. return it.
-		GridLocation clickedPair = null;
+		GridLocation clickedPair;
 		for (GridLocation gridSpace : pieceGridPairs) {
 			if (Intersector.intersectRayBoundsFast(ray, gridSpace.gridSpace.getBoundingBox())) {
 				clickedPair = gridSpace;
-				if (clickedPair != null) {
 					mIntersectedBoxList.clear();
 					return clickedPair;
-				}
 			}
 		}
 

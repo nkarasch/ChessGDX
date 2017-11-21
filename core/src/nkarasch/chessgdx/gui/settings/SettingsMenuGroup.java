@@ -5,10 +5,10 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 public class SettingsMenuGroup extends Group {
 
-	private SoundSettingsTable mSoundSettings;
-	private GraphicsSettingsTable mGraphicsSettings;
-	private EngineSettingsTable mEngineSettings;
-	private SettingsRootTable mSettingsRoot;
+	private final SoundSettingsTable mSoundSettings;
+	private final GraphicsSettingsTable mGraphicsSettings;
+	private final EngineSettingsTable mEngineSettings;
+	private final SettingsRootTable mSettingsRoot;
 
 	/**
 	 * A group containing the settings dialog root menu, sound settings root

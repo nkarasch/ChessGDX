@@ -14,18 +14,14 @@ import com.badlogic.gdx.math.Vector3;
 
 public class ChessPiece extends ABoundsObject {
 
-	private static Random random = new Random();
+	private final static Random random = new Random();
 
-	public enum MoveType {
-		STANDARD, DEAD, RESET
-	};
-
-	private Vector3 mGraveyardPosition;
-	private Vector3 mHomePosition;
-	private Vector3 mMoveStartPosition;
+	private final Vector3 mGraveyardPosition;
+	private final Vector3 mHomePosition;
+	private final Vector3 mMoveStartPosition;
 	private Vector3 mDestination;
-	private Vector3 mMoveDirection;
-	private Vector3 mCurrentPosition;
+	private final Vector3 mMoveDirection;
+	private final Vector3 mCurrentPosition;
 	private Vector3 mTemp;
 
 	private boolean mMoving, mDead, mPromoted;

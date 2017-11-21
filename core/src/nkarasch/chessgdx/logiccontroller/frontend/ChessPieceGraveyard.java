@@ -8,8 +8,8 @@ import com.badlogic.gdx.math.Vector3;
 
 public class ChessPieceGraveyard {
 
-	private Stack<Vector3> mWhiteGraveyardPositions = buildWhiteGraveyard();
-	private Stack<Vector3> mBlackGraveyardPositions = buildBlackGraveyard();
+	private final Stack<Vector3> mWhiteGraveyardPositions = buildWhiteGraveyard();
+	private final Stack<Vector3> mBlackGraveyardPositions = buildBlackGraveyard();
 
 	/**
 	 * @param piece

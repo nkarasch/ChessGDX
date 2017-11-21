@@ -13,10 +13,10 @@ class OrbitCamera extends InputAdapter {
 	private final Vector3 mTmp;
 	private boolean mRightMousePressed;
 
-	private float mSensitivity;
-	private float mZoomSpeed;
-	private float mZoomMin;
-	private float mZoomMax;
+	private final float mSensitivity;
+	private final float mZoomSpeed;
+	private final float mZoomMin;
+	private final float mZoomMax;
 
 	/**
 	 * A camera controller that always looks toward (0,0,0) and rotates around

@@ -13,10 +13,10 @@ import com.badlogic.gdx.utils.ObjectMap;
 
 public class ChessLogicController {
 
-	private ObjectMap<Integer, Array<Short>> mLegalMoveMap;
-	private UCIEngineInterface mUCIInterface;
+	private final ObjectMap<Integer, Array<Short>> mLegalMoveMap;
+	private final UCIEngineInterface mUCIInterface;
 	private Position mPosition;
-	private OverlayRenderer mOverlay;
+	private final OverlayRenderer mOverlay;
 
 	/**
 	 * Handles the behind the scenes chess game logic, taking advantage of the
@@ -57,10 +57,10 @@ public class ChessLogicController {
 		short move = 0;
 
 		// find Chesspresso short representation in it's legal moves list
-		for (int i = 0; i < allMoves.length; i++) {
-			if (Move.getFromSqi(allMoves[i]) == fromIndex && Move.getToSqi(allMoves[i]) == toIndex
-					&& Move.getPromotionPiece(allMoves[i]) == promotion) {
-				move = allMoves[i];
+		for(short currentMove : allMoves){
+			if (Move.getFromSqi(currentMove) == fromIndex && Move.getToSqi(currentMove) == toIndex
+					&& Move.getPromotionPiece(currentMove) == promotion) {
+				move = currentMove;
 				break;
 			}
 		}
@@ -95,8 +95,8 @@ public class ChessLogicController {
 
 		short[] moves = mPosition.getAllMoves();
 		// fills board indexes with their legal moves
-		for (int i = 0; i < moves.length; i++) {
-			mLegalMoveMap.get(Move.getFromSqi(moves[i])).add(moves[i]);
+		for(short move : moves){
+			mLegalMoveMap.get(Move.getFromSqi(move)).add(move);
 		}
 
 		return mLegalMoveMap;

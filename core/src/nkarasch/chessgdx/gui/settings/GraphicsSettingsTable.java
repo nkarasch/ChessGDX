@@ -20,8 +20,6 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 class GraphicsSettingsTable extends Table {
 
-	private GraphicsSettings mGraphicsSettings;
-
 	/**
 	 * Options dialog to let the user choose their display resolution, whether
 	 * to run in fullscreen/windowed mode, and whether to enable vsync.
@@ -30,7 +28,7 @@ class GraphicsSettingsTable extends Table {
 	 */
 	GraphicsSettingsTable(Skin skin) {
 
-		mGraphicsSettings = new GraphicsSettings();
+		GraphicsSettings mGraphicsSettings = new GraphicsSettings();
 
 		final Preferences pref = Gdx.app.getPreferences(GameCore.TITLE);
 

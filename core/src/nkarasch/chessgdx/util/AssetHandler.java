@@ -35,11 +35,11 @@ public class AssetHandler {
 		return assetHandler;
 	}
 
-	private AssetManager mAssetManager;
-	private ObjectMap<Short, Model> mChessPieceModels;
-	private ObjectMap<Short, Model> mPieceCollisionModels;
-	private ObjectMap<String, Model> mOtherModels;
-	private Cubemap mCubemap;
+	private final AssetManager mAssetManager;
+	private final ObjectMap<Short, Model> mChessPieceModels;
+	private final ObjectMap<Short, Model> mPieceCollisionModels;
+	private final ObjectMap<String, Model> mOtherModels;
+	private final Cubemap mCubemap;
 
 	private AssetHandler() {
 		mAssetManager = load();

@@ -9,8 +9,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 public class EngineThinkingImage extends Image {
 
-	private RepeatAction mSpinAction = new RepeatAction();
-
 	/**
 	 * A spinning icon that tells the user the engine is currently processing
 	 * the next move.
@@ -19,6 +17,7 @@ public class EngineThinkingImage extends Image {
 	 */
 	public EngineThinkingImage(Skin skin) {
 		super(skin, MenuSkin.IMG_LOADING_ICON);
+		RepeatAction mSpinAction = new RepeatAction();
 		mSpinAction.setCount(RepeatAction.FOREVER);
 		mSpinAction.setAction(Actions.rotateBy(-360.0f, 1.0f));
 

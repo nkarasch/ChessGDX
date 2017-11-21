@@ -10,9 +10,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 
 class SliderMenuTable extends Table {
 
-	private ImageButton mSettingsButton;
-	private ImageButton mSliderButton;
-	private ImageButton mExitButton;
+	private final ImageButton mSettingsButton;
+	private final ImageButton mSliderButton;
+	private final ImageButton mExitButton;
 
 	/**
 	 * A menu containing a settings button, exit button, and a button to expand

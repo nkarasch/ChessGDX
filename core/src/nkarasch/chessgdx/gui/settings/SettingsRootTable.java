@@ -12,10 +12,6 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 
 public class SettingsRootTable extends Table {
 
-	private TextButton mBtGraphics;
-	private TextButton mBtEngine;
-	private TextButton mBtSound;
-
 	/**
 	 * A dialog box that gives users the option to access graphics settings,
 	 * sound settings, and engine settings.
@@ -25,9 +21,9 @@ public class SettingsRootTable extends Table {
 	 */
 	SettingsRootTable(Skin skin, final SettingsMenuGroup settingsMenu) {
 
-		mBtGraphics = new TextButton("Graphics", skin);
-		mBtEngine = new TextButton("Engine", skin);
-		mBtSound = new TextButton("Sound", skin);
+		TextButton mBtGraphics = new TextButton("Graphics", skin);
+		TextButton mBtEngine = new TextButton("Engine", skin);
+		TextButton mBtSound = new TextButton("Sound", skin);
 
 		add(new Label("        Settings        ", skin, MenuSkin.LB_LARGE)).fillX();
 		row().fill();

@@ -17,7 +17,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 public class SlidingMenuGroup extends Group {
 
 	private boolean mOpen;
-	private MoveHistoryTable mMoveHistory;
+	private final MoveHistoryTable mMoveHistory;
 
 	/**
 	 * Group of all of the components that are part of the sliding menu and side

@@ -9,10 +9,10 @@ import com.badlogic.gdx.audio.Sound;
 
 public class SoundManager {
 
-	private Music mAmbience;
-	private Sound mClicked;
-	private Sound mReleased;
-	private Sound mMove;
+	private final Music mAmbience;
+	private final Sound mClicked;
+	private final Sound mReleased;
+	private final Sound mMove;
 
 	private float mEffectsVolume;
 

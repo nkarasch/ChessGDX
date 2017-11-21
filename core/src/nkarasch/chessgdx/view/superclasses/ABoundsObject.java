@@ -19,7 +19,7 @@ public abstract class ABoundsObject extends ABaseObject {
 	 * @param collisionModelInstance
 	 *            low poly version of model used for collision detection
 	 */
-	public ABoundsObject(ModelInstance fullModelInstance, ModelInstance collisionModelInstance) {
+	protected ABoundsObject(ModelInstance fullModelInstance, ModelInstance collisionModelInstance) {
 		super(fullModelInstance);
 		this.mCollisionModelInstance = collisionModelInstance;
 		calculateBounds();
@@ -32,7 +32,7 @@ public abstract class ABoundsObject extends ABaseObject {
 	 * @param fullModelInstance
 	 *            full quality model instance
 	 */
-	public ABoundsObject(ModelInstance fullModelInstance) {
+	protected ABoundsObject(ModelInstance fullModelInstance) {
 		super(fullModelInstance);
 		this.mCollisionModelInstance = null;
 		calculateBounds();
@@ -41,7 +41,7 @@ public abstract class ABoundsObject extends ABaseObject {
 	/**
 	 * Instantiate the bounding box
 	 */
-	public void calculateBounds() {
+	protected void calculateBounds() {
 		this.mBoundingBox = mModelInstance.calculateBoundingBox(new BoundingBox());
 		mBBOriginMin = new Vector3(mBoundingBox.min);
 		mBBOriginMax = new Vector3(mBoundingBox.max);
@@ -50,18 +50,18 @@ public abstract class ABoundsObject extends ABaseObject {
 	/**
 	 * {@inheritDoc}
 	 */
-	public void rotate(Vector3 direction, float degrees) {
+	protected void rotate(Vector3 direction, float degrees) {
 		super.rotate(direction, degrees);
 		if (mCollisionModelInstance != null) {
 			mCollisionModelInstance.transform.rotate(direction.x, direction.y, direction.z, degrees);
+			mBoundingBox.mul(mCollisionModelInstance.transform);
 		}
-		mBoundingBox.mul(mCollisionModelInstance.transform);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public void setTranslation(float x, float y, float z) {
+	protected void setTranslation(float x, float y, float z) {
 		super.setTranslation(x, y, z);
 		if (mCollisionModelInstance != null) {
 			mCollisionModelInstance.transform.setTranslation(x, y, z);

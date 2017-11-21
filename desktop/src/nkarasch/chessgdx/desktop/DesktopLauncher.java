@@ -30,14 +30,14 @@ public class DesktopLauncher {
 				if (Gdx.app != null) {
 					Gdx.app.exit();
 				}
-				DesktopLauncher.restart(DesktopLauncher.class, new String[] {});
+				DesktopLauncher.restart(DesktopLauncher.class);
 			}
 		};
 
 		new LwjglApplication(new GameCore(rebootable), cfg);
 	}
 
-	public static void restart(Class<?> mainClass, String... parameters) {
+	private static void restart(Class<?> mainClass, String... parameters) {
 		List<String> cmdLine = new ArrayList<String>();
 
 		String jvmHome = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";

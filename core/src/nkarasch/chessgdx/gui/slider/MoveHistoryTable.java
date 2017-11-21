@@ -7,19 +7,20 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.utils.Align;
+
+import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 
 public class MoveHistoryTable extends Table {
 
-	private static int SMALL_LABEL_SIZE = 27;
-	private static int BUTTON_SIZE = 64;
+	private final static int SMALL_LABEL_SIZE = 27;
+	private final static int BUTTON_SIZE = 64;
 
-	private Array<ChessPieceMove> mWhiteHistory;
-	private Array<ChessPieceMove> mBlackHistory;
+	private final Array<ChessPieceMove> mWhiteHistory;
+	private final Array<ChessPieceMove> mBlackHistory;
 
-	private Array<Label> mWhiteMoves;
-	private Array<Label> mBlackMoves;
+	private final Array<Label> mWhiteMoves;
+	private final Array<Label> mBlackMoves;
 
 	/**
 	 * Displays the move history for both black and white.

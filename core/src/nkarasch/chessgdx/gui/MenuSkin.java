@@ -26,29 +26,29 @@ import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 
 public class MenuSkin extends Skin {
 
-	public static String TEX_LOW_ALPHA_GREY = "low_alpha";
+	public final static String TEX_LOW_ALPHA_GREY = "low_alpha";
 
-	public static String IB_KNIGHT_PROMOTION = "knight_promotion";
-	public static String IB_BISHOP_PROMOTION = "bishop_promotion";
-	public static String IB_ROOK_PROMOTION = "rook_promotion";
-	public static String IB_QUEEN_PROMOTION = "queen_promotion";
-	public static String IMG_LOADING_ICON = "loading_icon";
-	public static String IB_SETTINGS = "settings_button";
-	public static String IB_SLIDER = "slider_button";
-	public static String IB_EXIT = "exit_button";
-	public static String IB_NEW = "new_button";
-	public static String LB_LARGE = "large_label";
-	public static String LB_LARGE_NOBG = "large_label_nobg";
-	public static String LB_LARGE_WHITE = "large_white_label";
-	public static String LB_SMALL_WHITE = "small_white_label";
-	public static String LS_COLOR_CHOOSER = "color_chooser_list";
+	public final static String IB_KNIGHT_PROMOTION = "knight_promotion";
+	public final static String IB_BISHOP_PROMOTION = "bishop_promotion";
+	public final static String IB_ROOK_PROMOTION = "rook_promotion";
+	public final static String IB_QUEEN_PROMOTION = "queen_promotion";
+	public final static String IMG_LOADING_ICON = "loading_icon";
+	public final static String IB_SETTINGS = "settings_button";
+	public final static String IB_SLIDER = "slider_button";
+	public final static String IB_EXIT = "exit_button";
+	public final static String IB_NEW = "new_button";
+	public final static String LB_LARGE = "large_label";
+	public final static String LB_LARGE_NOBG = "large_label_nobg";
+	public final static String LB_LARGE_WHITE = "large_white_label";
+	public final static String LB_SMALL_WHITE = "small_white_label";
+	public final static String LS_COLOR_CHOOSER = "color_chooser_list";
 
-	private Pixmap mHighAlphaGrey;
-	private Pixmap mLowAlphaGrey;
-	private Pixmap mFullWhite;
-	private Texture mLowAlphaGreyTexture;
-	private Texture mHighAlphaGreyTexture;
-	private Texture mFullWhiteTexture;
+	private final Pixmap mHighAlphaGrey;
+	private final Pixmap mLowAlphaGrey;
+	private final Pixmap mFullWhite;
+	private final Texture mLowAlphaGreyTexture;
+	private final Texture mHighAlphaGreyTexture;
+	private final Texture mFullWhiteTexture;
 
 	public MenuSkin() {
 

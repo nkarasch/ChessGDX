@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.PerspectiveCamera;
 
 public class Camera extends PerspectiveCamera {
 
-	private OrbitCamera mFPCameraController;
+	private final OrbitCamera mFPCameraController;
 
 	/**
 	 * Creates 60 degree field of view PerspectiveCamera and instantiates its

@@ -11,7 +11,7 @@ import com.badlogic.gdx.utils.Array;
 
 public class GraphicsSettings {
 
-	private Array<CustomDisplayMode> mDisplayModes;
+	private final Array<CustomDisplayMode> mDisplayModes;
 
 	/**
 	 * Used by GraphicsSettingsTable for presenting display mode options and
@@ -84,11 +84,26 @@ public class GraphicsSettings {
 		boolean fullscreen = pref.getBoolean(PreferenceStrings.FULLSCREEN);
 		boolean vSync = pref.getBoolean(PreferenceStrings.VSYNC);
 		if (width != 0 && height != 0) {
-			Gdx.graphics.setDisplayMode(width, height, fullscreen);
-			Gdx.graphics.setVSync(vSync);
+            if(fullscreen) {
+                DisplayMode usable = Gdx.graphics.getDisplayMode();
+                for(DisplayMode displayMode : Gdx.graphics.getDisplayModes()){
+                    if(displayMode.width == width && displayMode.height == height){
+                        usable = displayMode;
+                        break;
+                    }
+                }
+                Gdx.graphics.setFullscreenMode(usable);
+            } else {
+                Gdx.graphics.setWindowedMode(width, height);
+            }
+            Gdx.graphics.setVSync(vSync);
 		} else {
-			Gdx.graphics.setDisplayMode(Gdx.graphics.getDesktopDisplayMode());
-			Gdx.graphics.setVSync(true);
+            if(fullscreen) {
+                Gdx.graphics.setFullscreenMode(Gdx.graphics.getDisplayMode());
+            } else {
+                Gdx.graphics.setWindowedMode(1280, 720);
+            }
+            Gdx.graphics.setVSync(vSync);
 		}
 	}
 

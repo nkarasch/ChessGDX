@@ -28,15 +28,15 @@ import com.badlogic.gdx.Preferences;
 // TODO make engine process shut down properly after validateEngine is called
 public class UCIEngineInterface {
 
-	private ExecutorService mService;
+	private final ExecutorService mService;
 	private Future<String> mTask;
 	private Process mEngineProcess;
-	private ProcessBuilder mProcessBuilder;
+	private final ProcessBuilder mProcessBuilder;
 	private BufferedReader mProcessReader;
 	private OutputStreamWriter mProcessWriter;
 	private String mFEN;
-	private String mSearchType;
-	private int mSearchValue;
+	private final String mSearchType;
+	private final int mSearchValue;
 
 	UCIEngineInterface(String PATH) {
 		mProcessBuilder = new ProcessBuilder(PATH);
@@ -58,7 +58,7 @@ public class UCIEngineInterface {
 	public static boolean validateEngine(String PATH) {
 		UCIEngineInterface uci = new UCIEngineInterface(PATH);
 		if (uci.startEngine()) {
-			uci.getOutput(100);
+			uci.processOutput(100);
 			uci.stopEngine();
 			return true;
 		} else {
@@ -88,7 +88,7 @@ public class UCIEngineInterface {
 	 * @param command
 	 *            - a UCI command
 	 */
-	public void sendCommand(String command) {
+	private void sendCommand(String command) {
 		try {
 			if (mProcessWriter != null) {
 				mProcessWriter.write(command + "\n");
@@ -107,10 +107,8 @@ public class UCIEngineInterface {
 	 *            Time in milliseconds for which the function waits before
 	 *            reading the output. Useful when a long running command is
 	 *            executed
-	 * @return Raw output from Stockfish
 	 */
-	private String getOutput(int waitTime) {
-		StringBuffer buffer = new StringBuffer();
+	private void processOutput(int waitTime) {
 		try {
 			Thread.sleep(waitTime);
 			sendCommand("isready");
@@ -118,13 +116,10 @@ public class UCIEngineInterface {
 				String text = mProcessReader.readLine();
 				if (text.equals("readyok"))
 					break;
-				else
-					buffer.append(text + "\n");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return buffer.toString();
 	}
 
 	/**

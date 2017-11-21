@@ -13,10 +13,10 @@ public class GridSpaceHighlighter extends ABoundsObject {
 
 	public enum GridState {
 		NONE, FADE_GREEN, FADE_RED, LEGAL_HOVER, ILLEGAL_HOVER
-	};
+	}
 
 	private GridState mGridState;
-	private BlendingAttribute mAlphaBlend;
+	private final BlendingAttribute mAlphaBlend;
 
 	/**
 	 * Typically transparent plane that covers a board grid space. Can change

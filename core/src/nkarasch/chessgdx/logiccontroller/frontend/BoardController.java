@@ -18,11 +18,11 @@ public class BoardController extends InputAdapter {
 
 	private static final int DELAY_SECONDS = 3;
 
-	private ObjectPicker mObjectPicker;
-	private VisibleBoardState mViewBoardState;
-	private PerspectiveCamera mCamera;
-	private ChessLogicController mLogicController;
-	private OverlayRenderer mOverlay;
+	private final ObjectPicker mObjectPicker;
+	private final VisibleBoardState mViewBoardState;
+	private final PerspectiveCamera mCamera;
+	private final ChessLogicController mLogicController;
+	private final OverlayRenderer mOverlay;
 
 	private int mButtonPressed;
 	private Array<Short> mLegalMoves;
@@ -174,8 +174,7 @@ public class BoardController extends InputAdapter {
 			if (mViewBoardState.getUserFrom() != mViewBoardState.getUserTo() && mViewBoardState.getUserTo() != null) {
 				for (int i = 0; i < mLegalMoves.size; i++) {
 					if (Move.getToSqi(mLegalMoves.get(i)) == mViewBoardState.getUserTo().indexLocation) {
-						short move = mLegalMoves.get(i);
-						return move;
+						return mLegalMoves.get(i);
 					}
 				}
 			}
@@ -222,11 +221,7 @@ public class BoardController extends InputAdapter {
 	 * @return is it currently the players turn
 	 */
 	private boolean isPlayerTurn() {
-		if (mPlayerIsWhite == mLogicController.isWhiteTurn()) {
-			return true;
-		} else {
-			return false;
-		}
+		return mPlayerIsWhite == mLogicController.isWhiteTurn();
 	}
 
 	/**

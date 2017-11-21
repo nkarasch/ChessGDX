@@ -1,7 +1,6 @@
 package nkarasch.chessgdx.view.renderers;
 
 import nkarasch.chessgdx.GameCore;
-import nkarasch.chessgdx.camera.Camera;
 import nkarasch.chessgdx.gui.MenuSkin;
 import nkarasch.chessgdx.gui.other.CheckMateTable;
 import nkarasch.chessgdx.gui.other.EngineThinkingImage;
@@ -17,22 +16,21 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 public class OverlayRenderer extends Stage {
 
-	private Skin mSkin;
-	private PromotionTable mPromotionDialog;
-	private CheckMateTable mCheckmateDialog;
-	private EngineThinkingImage mEngineThinking;
-	private SlidingMenuGroup mSlidingMenu;
+	private final Skin mSkin;
+	private final PromotionTable mPromotionDialog;
+	private final CheckMateTable mCheckmateDialog;
+	private final EngineThinkingImage mEngineThinking;
+	private final SlidingMenuGroup mSlidingMenu;
 
 	/**
 	 * Foundation of the Scene2D based GUI.
-	 * 
-	 * @param camera
+	 *
 	 * @param core
 	 *            root of game, is passed in so GUI elements can trigger
 	 *            {@link GameCore#restart()} and
 	 *            {@link GameCore#newGame(boolean)}
 	 */
-	public OverlayRenderer(Camera camera, GameCore core) {
+	public OverlayRenderer(GameCore core) {
 
 		mSkin = new MenuSkin();
 		ExitConfirmTable exitConfirm = new ExitConfirmTable(mSkin);
