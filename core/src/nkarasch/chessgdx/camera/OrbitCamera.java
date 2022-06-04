@@ -19,12 +19,11 @@ class OrbitCamera extends InputAdapter {
 	private final float mZoomMax;
 
 	/**
-	 * A camera controller that always looks toward (0,0,0) and rotates around
-	 * it when the right mouse button is clicked. Also has preset camera
-	 * positions for pressed of the number keys 1-6. Extends InputAdapter.
+	 * A camera controller that always looks toward (0,0,0) and rotates around it
+	 * when the right mouse button is clicked. Also has preset camera positions for
+	 * pressed of the number keys 1-6. Extends InputAdapter.
 	 * 
-	 * @param camera
-	 *            a PerspectiveCamera instance
+	 * @param camera a PerspectiveCamera instance
 	 */
 	OrbitCamera(Camera camera) {
 		this.mCamera = camera;
@@ -68,17 +67,17 @@ class OrbitCamera extends InputAdapter {
 	}
 
 	@Override
-	public boolean scrolled(int amount) {
+	public boolean scrolled(float x, float y) {
 
 		float distance = mCamera.position.dst(mTmp);
 
-		if ((distance < mZoomMax + (-amount * mZoomSpeed)) && (distance > mZoomMin + (-amount * mZoomSpeed))) {
-			mTmp.set(mCamera.direction).nor().scl(-amount * mZoomSpeed);
+		if ((distance < mZoomMax + (-y * mZoomSpeed)) && (distance > mZoomMin + (-y * mZoomSpeed))) {
+			mTmp.set(mCamera.direction).nor().scl(-y * mZoomSpeed);
 			mCamera.position.add(mTmp);
 			mTmp.set(0.0f, 0.0f, 0.0f);
 		}
 		mCamera.lookAt(0.0f, 0.0f, 0.0f);
-		return super.scrolled(amount);
+		return super.scrolled(x, y);
 	}
 
 	@Override

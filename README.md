@@ -1,3 +1,5 @@
+Updated to LibGDX 1.11.0 and Gradle 7.3.3 via user difficulty comment.
+
 # ChessGDX
 ChessGDX is a 3D chess game built on LibGDX that takes advantage of UCI-Protocol compliant chess engines. It is a functional, but narrowly scoped project I made while learning LibGDX.
 

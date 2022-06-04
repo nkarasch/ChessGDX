@@ -1,4 +1,4 @@
-package nkarasch.chessgdx.desktop;
+package nkarasch.chessgdx;
 
 import java.io.File;
 import java.lang.management.ManagementFactory;
@@ -6,23 +6,29 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import nkarasch.chessgdx.GameCore;
-
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
-import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 
 public class DesktopLauncher {
 	public static void main(String[] arg) {
-		final LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
+		final Lwjgl3ApplicationConfiguration cfg = new Lwjgl3ApplicationConfiguration();
+		cfg.setTitle("ChessGDX");
+		cfg.setForegroundFPS(0);
+		cfg.setIdleFPS(30);
+		cfg.setResizable(false);
+		cfg.setWindowedMode(1280, 720);
+		cfg.useVsync(false);
+		cfg.setBackBufferConfig(8, 8, 8, 8, 16, 0, 16); //defaults except for samples
+		/* 
 		cfg.title = "ChessGDX";
-		cfg.width = 1920;
 		cfg.height = 1080;
 		cfg.backgroundFPS = 30;
 		cfg.foregroundFPS = 0;
 		cfg.vSyncEnabled = false;
 		cfg.samples = 16;
 		cfg.resizable = false;
+		 */
 
 		final Runnable rebootable = new Runnable() {
 			@Override
@@ -34,7 +40,7 @@ public class DesktopLauncher {
 			}
 		};
 
-		new LwjglApplication(new GameCore(rebootable), cfg);
+		new Lwjgl3Application(new GameCore(rebootable), cfg);
 	}
 
 	private static void restart(Class<?> mainClass, String... parameters) {

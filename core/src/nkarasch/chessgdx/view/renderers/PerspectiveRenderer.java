@@ -24,7 +24,6 @@ public class PerspectiveRenderer {
 
 	private final ModelBatch mShadowBatch;
 	private final ModelBatch mCubeMapBatch;
-	private final ModelBatch mBackgroundBatch;
 	private final Environment mEnvironment;
 	private final Environment mBackgroundEnvironment;
 	private final Array<ABaseObject> mDrawables;
@@ -54,7 +53,6 @@ public class PerspectiveRenderer {
 
 		mShadowBatch = new ModelBatch(new DepthShaderProvider());
 		mCubeMapBatch = new ModelBatch(Gdx.files.internal("shaders/cubevertex.glsl"), Gdx.files.internal("shaders/cubefragment.glsl"));
-		mBackgroundBatch = new ModelBatch();
 		mEnvironment = new Environment();
 		mBackgroundEnvironment = new Environment();
 		mDrawables = new Array<ABaseObject>();
@@ -66,7 +64,9 @@ public class PerspectiveRenderer {
 	}
 
 	/**
-	 * Configures the lighting and attributes for the environments	 *
+	 * Configures the lighting and attributes for the environments
+	 * 
+	 * 6/4/22 - Updated but this is an even worse example now as it seems the default shader has changed and I'm not putting time into it
 	 */
 	private void configureEnvironments() {
 		mEnvironment.set(new CubemapAttribute(CubemapAttribute.EnvironmentMap, AssetHandler.getInstance().getCubeMap()),
@@ -142,8 +142,8 @@ public class PerspectiveRenderer {
 		mCubeMapBatch.end();
 
 		// draw background sphere
-		mBackgroundBatch.begin(mCamera);
-		mBackground.render(mBackgroundBatch, mBackgroundEnvironment);
-		mBackgroundBatch.end();
+		mCubeMapBatch.begin(mCamera);
+		mBackground.render(mCubeMapBatch, mBackgroundEnvironment);
+		mCubeMapBatch.end();
 	}
 }
