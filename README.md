@@ -1,3 +1,5 @@
+:stop_sign: DEPRECATED as of the LibGDX change to lwjgl3
+
 Updated to LibGDX 1.11.0 and Gradle 7.3.3 via user difficulty comment.
 
 # ChessGDX
